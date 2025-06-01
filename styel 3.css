@@ -1,0 +1,189 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: serif;
+    cursor:default;
+}
+.header{
+    background-image:linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(https://www.lehighvalleygrandprix.com/wp-content/uploads/2017/05/graduation-party.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment:scroll;
+    
+    
+    
+}
+nav{
+    margin-left: 950px;
+
+}
+a{
+    padding: 30px;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 13px;
+    cursor: pointer;
+    
+}
+
+a:hover{
+    color: orangered;
+    
+}
+
+img{
+    margin-left: 40px;
+}
+span{
+    color: white;
+    margin-top: -10px;
+    font-size: 25px;
+    text-transform: uppercase;
+
+}
+.one{
+    margin-top: -30px;
+}
+.main{
+    padding-top: 20px;
+    
+}
+.name{
+    width:1000px;
+    height: 200px;
+    margin-top: 150px;
+    text-align: center;
+    margin-left: 250px;
+    color: white;
+    text-transform: capitalize;
+}
+h1{
+    font-size: 40px;
+    margin-top: -20px;
+}
+.image img{
+    margin-top: 70px;
+    margin-left: 100px;
+}
+.flex{
+    display: flex;
+    
+}
+.post{
+    margin-top: 70px;
+    margin-left: 400px;
+    text-transform: capitalize;
+    
+    
+}
+td{
+    width: 400px;
+    padding-top: 20px;
+}
+h3{
+    margin-left: 140px;
+    color: orangered;
+    font-size: 20px;   
+}
+#content{
+    font-size: 20px;
+    margin-top: 20px;
+}
+.points{
+    text-transform: capitalize;
+    
+    margin-left: 100px;
+    width: 700px;
+}
+li{
+    margin-top: 10px;
+}
+.comments{
+    width: 700px;
+    border: solid;
+    margin-left: 100px;
+    height: 300px;
+    margin-top: 30px;
+    border-radius: 5px;
+    border-color:rgba(0, 0, 0, 0.705);
+    border-width: thin;
+    
+}
+input{
+    width: 650px;
+    height: 25px;
+    margin-top: 30px;
+    text-transform: capitalize;
+    background-color: rgb(204, 198, 198);
+    border: solid;
+    border-width: thin;
+    border-radius: 2px;
+    padding-left: 10px;
+    
+}
+.comments h5, input{
+    margin-left: 20px;
+    margin-top: 20px;
+}
+#text{
+    height:80px;
+    
+}
+.comments button{
+    margin-top: 30px;
+    margin-left: 20px;
+    padding: 6px;
+    width: 150px;
+    margin-top: 15px;
+    background-color:white;
+    color:orangered;
+    border: solid;
+    border-width: thin;
+
+    
+    cursor: pointer;
+}
+button:hover{
+    color: white;
+    background-color: orangered;
+}
+h5{
+    font-size: 20px;
+    text-transform: capitalize;
+}
+.last h6{
+    text-align: center;
+    margin-top: 100px;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+.last p{
+    font-size: 15px;
+    margin-top: 15px;
+    text-transform: capitalize;
+    margin-left: 350px;
+}
+.last pre{
+    margin-top: 2px;
+    margin-left: 250px;
+}
+.social{
+    margin-top: 30px;
+    margin-left: 480px;
+    cursor: pointer;
+}
+#a{
+    margin-left: -90px;
+}
+#an{
+    margin-left: -90px;
+}
+#anchor{
+    margin-left:150px;
+}
+
+
+
+
