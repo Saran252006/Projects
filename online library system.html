@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library Management System</title>
+  <style>
+        * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #74b9ff, #a29bfe);
+      min-height: 100vh;
+      color: #2d3436;
+    }
+
+    
+    nav {
+      background-color: #2d3436;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      flex-wrap: wrap;
+    }
+
+    nav .navbar-brand {
+      font-size: 22px;
+      font-weight: bold;
+      text-decoration: none;
+      color: white;
+    }
+
+    
+    .container {
+      background: white;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .container h1 {
+      text-align: center;
+      color:#0984e3;
+      margin-bottom: 20px;
+    }
+
+    hr {
+      border: none;
+      border-top: 2px solid #74b9ff;
+      margin-bottom: 20px;
+    }
+
+   
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      font-weight: 600;
+      color: #0984e3;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #dfe6e9;
+      outline: none;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    input[type="text"]:focus {
+      border-color: #74b9ff;
+    }
+
+    fieldset {
+      border: 1px solid #dfe6e9;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 15px;
+    }
+
+    legend {
+      font-weight: bold;
+      color: #0984e3;
+      padding: 0 5px;
+    }
+
+    .form-check {
+      margin-bottom: 10px;
+    }
+
+    .form-check-input {
+      margin-right: 8px;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: #0984e3;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
+      font-size: 15px;
+      cursor: pointer;
+      transition: 0.3s;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    .btn-primary:hover {
+       background: #080808;
+    }
+
+   
+    .search-box {
+      margin-top: 20px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .search-box input {
+      flex: 1;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #dfe6e9;
+    }
+
+    .search-box button {
+      background: #0984e3;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .search-box button:hover {
+      background: #080808;
+    }
+
+    
+    #table {
+      margin-top: 30px;
+    }
+
+    #table h1 {
+      text-align: center;
+      color: #0984e3;
+      margin-bottom: 15px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 12px;
+      border: 1px solid #dfe6e9;
+    }
+
+    th {
+      background: #0984e3;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      
+    }
+
+    tr:nth-child(odd) {
+      background: #f5f6fa;
+    }
+
+    tr:hover {
+      background: #dfe6e9;
+    }
+   
+    td button {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: 0.3s ease;
+    margin: 3px;
+    }
+
+
+    td button:first-child {
+    background-color: #1abc9c;
+    color: white;
+    }
+
+    td button:first-child:hover {
+     background-color: #16a085;
+    }
+
+
+    td button.delete {
+    background-color: #e74c3c;
+    color: white;
+    }
+
+    td button.delete:hover {
+    background-color: #c0392b;
+    }
+
+
+    td:last-child, th:last-child {
+    text-align: center;
+    white-space: nowrap;
+    }
+    td:last-child {
+    display: flex;
+     justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    }
+  </style>
+
+</head>
+
+<body>
+  <nav>
+    <a class="navbar-brand" href="#">📚 Online Library System</a>
+  </nav>
+  <div class="container">
+    <h1>Your Library</h1>
+    <hr>
+
+    <form>
+      <div class="form-group">
+        <label for="bookName">Book Name</label>
+        <input type="text" id="bookName" placeholder="Enter Book Name">
+      </div>
+
+      <div class="form-group">
+        <label for="author">Author</label>
+        <input type="text" id="author" placeholder="Enter Author Name">
+      </div>
+
+      
+
+      <button type="button" class="btn-primary">Add Book</button>
+    </form>
+
+    <div class="search-box">
+      <input type="text" placeholder="Search by book or author name...">
+      <button type="button">Search</button>
+    </div>
+
+    <div id="table">
+      <h1>Your Books</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Book Name</th>
+            <th>Author</th>
+           
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Sample Book</td>
+            <td>John Doe</td>
+            
+            <td><button class="btn-primary">Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+
+class Book {
+  constructor(name, author, available = true) {
+    this.name = name;
+    this.author = author;
+    this.available = available;
+  }
+}
+
+
+function getBooks() {
+  return JSON.parse(localStorage.getItem("books")) || [];
+}
+
+
+function saveBooks(books) {
+  localStorage.setItem("books", JSON.stringify(books));
+}
+
+
+function displayBooks() {
+  const tableBody = document.querySelector("tbody");
+  const books = getBooks();
+  tableBody.innerHTML = "";
+
+  books.forEach((book, index) => {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td>${book.name}</td>
+      <td>${book.author}</td>
+      <td>${book.available ? " Available" : " Not Available"}</td>
+      <td>
+        <button class="btn-primary" onclick="toggleAvailability(${index})">
+          ${book.available ? "Mark Unavailable" : "Mark Available"}
+        </button>
+        <button class="btn-primary delete" onclick="deleteBook(${index})">Delete</button>
+      </td>
+    `;
+    tableBody.appendChild(row);
+  });
+}
+
+
+document.querySelector(".btn-primary").addEventListener("click", () => {
+  const name = document.getElementById("bookName").value.trim();
+  const author = document.getElementById("author").value.trim();
+
+  if (name === "" || author === "") {
+    alert("Please enter both book name and author!");
+    return;
+  }
+
+  const books = getBooks();
+  const newBook = new Book(name, author, true);
+  books.push(newBook);
+  saveBooks(books);
+  displayBooks();
+
+  document.getElementById("bookName").value = "";
+  document.getElementById("author").value = "";
+});
+
+
+function deleteBook(index) {
+  const books = getBooks();
+  books.splice(index, 1);
+  saveBooks(books);
+  displayBooks();
+}
+
+
+function toggleAvailability(index) {
+  const books = getBooks();
+  books[index].available = !books[index].available;
+  saveBooks(books);
+  displayBooks();
+}
+
+
+document.querySelector(".search-box button").addEventListener("click", () => {
+  const searchValue = document
+    .querySelector(".search-box input")
+    .value.toLowerCase();
+
+  const tableBody = document.querySelector("tbody");
+  const rows = tableBody.getElementsByTagName("tr");
+
+  Array.from(rows).forEach((row) => {
+    const bookName = row.children[0].textContent.toLowerCase();
+    const author = row.children[1].textContent.toLowerCase();
+
+    if (bookName.includes(searchValue) || author.includes(searchValue)) {
+      row.style.display = "";
+    } else {
+      row.style.display = "none";
+    }
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", displayBooks);
+
+  </script>
+</body>
+</html>
